@@ -11,8 +11,23 @@ interface CVModalProps {
 
 export default function CVModal({ isOpen, onClose, cvUrl }: CVModalProps) {
   // Convert Drive view link to a preview link for iframe
-  const previewUrl = cvUrl.replace("/view?usp=sharing", "/preview");
-  const downloadUrl = cvUrl.replace("/view?usp=sharing", "/view");
+  const getDrivePreview = (url: string) => {
+  const match = url.match(/\/d\/(.*?)(\/|$)/);
+  return match
+    ? `https://drive.google.com/file/d/${match[1]}/preview`
+    : url;
+};
+
+const getDriveDownload = (url: string) => {
+  const match = url.match(/\/d\/(.*?)(\/|$)/);
+  return match
+    ? `https://drive.google.com/uc?export=download&id=${match[1]}`
+    : url;
+};
+
+const previewUrl = getDrivePreview(cvUrl);
+const downloadUrl = getDriveDownload(cvUrl);
+
 
   return (
     <AnimatePresence>

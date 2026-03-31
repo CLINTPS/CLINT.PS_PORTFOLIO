@@ -262,7 +262,7 @@ export default function Navbar() {
               href="#"
               className="w-10 h-10 rounded-full bg-gradient-to-br from-[#007787] to-[#f15a2b] flex items-center justify-center text-white font-black text-lg shadow-md hover:scale-110 transition-transform"
             >
-              M
+              C
             </a>
 
             <div className="flex flex-col items-center gap-2">

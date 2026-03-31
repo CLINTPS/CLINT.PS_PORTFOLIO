@@ -8,13 +8,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: <BsLinkedin size={16} />, href: 'https://linkedin.com' },
-    { name: 'GitHub', icon: <BsGithub size={16} />, href: 'https://github.com' },
-    { name: 'LeetCode', icon: <SiLeetcode size={16} />, href: 'https://leetcode.com' },
-    { name: 'WhatsApp', icon: <BsWhatsapp size={16} />, href: 'https://wa.me/1234567890' },
+    { name: 'LinkedIn', icon: <BsLinkedin size={16} />, href: 'https://www.linkedin.com/in/clint-p-s-a4674017a/' },
+    { name: 'GitHub', icon: <BsGithub size={16} />, href: 'https://github.com/CLINTPS' },
+    { name: 'LeetCode', icon: <SiLeetcode size={16} />, href: 'https://leetcode.com/u/clintps1010/' },
+    { name: 'WhatsApp', icon: <BsWhatsapp size={16} />, href: 'https://wa.me/9496911848' },
     { name: 'Twitter', icon: <BsTwitter size={16} />, href: 'https://twitter.com' },
-    { name: 'Instagram', icon: <BsInstagram size={16} />, href: 'https://instagram.com' },
-    { name: 'Facebook', icon: <BsFacebook size={16} />, href: 'https://facebook.com' },
+    { name: 'Instagram', icon: <BsInstagram size={16} />, href: 'https://www.instagram.com/clint._.ps/' },
+    { name: 'Facebook', icon: <BsFacebook size={16} />, href: 'https://www.facebook.com/clint.ps.1' },
   ];
 
   return (
@@ -58,7 +58,7 @@ export default function Footer() {
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs font-medium text-gray-500 tracking-widest uppercase text-center">
-              © {currentYear} Dev.Portfolio — All Rights Reserved
+              © {currentYear} Clint_ps.Portfolio — All Rights Reserved
             </p>
             
             <div className="flex items-center gap-6">

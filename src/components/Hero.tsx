@@ -73,8 +73,10 @@ export default function Hero() {
                     CLINT P S
                   </h1>
                   <p className="mt-2 text-sm text-gray-500 max-w-md mx-auto sm:mx-0 font-medium">
-                    Building resilient, scalable and beautiful MERN & React
-                    Native apps — focused on performance and clean architecture.
+                    Full Stack Developer with 2 years of experience specializing
+                    in the MERN stack and React Native, building scalable web
+                    and mobile applications with a focus on performance, clean
+                    architecture, and seamless user experience.
                   </p>
 
                   <div className="mt-6 flex flex-wrap justify-center sm:justify-start gap-3">
@@ -105,13 +107,13 @@ export default function Hero() {
                   <div className="mt-6 flex items-center justify-center sm:justify-start gap-4 text-[#9fbec0] font-semibold">
                     <a
                       href="#contact"
-                      className="flex items-center text-gray-500 gap-2 text-sm hover:text-white transition"
+                      className="flex items-center text-gray-500 gap-2 text-sm  transition"
                     >
                       <Mail size={16} />{" "}
                       <span className="hidden sm:inline">Contact</span>
                     </a>
                     <a
-                      href="https://github.com/"
+                      href="https://github.com/CLINTPS"
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center text-gray-500 gap-2 text-sm hover:text-white transition"
@@ -120,7 +122,7 @@ export default function Hero() {
                       <span className="hidden sm:inline">GitHub</span>
                     </a>
                     <a
-                      href="https://www.linkedin.com/"
+                      href="https://www.linkedin.com/in/clint-p-s-a4674017a/"
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center text-gray-500 gap-2 text-sm hover:text-white transition"
@@ -136,36 +138,39 @@ export default function Hero() {
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   {
-                    icon: <Terminal size={18} />,
-                    title: "React Native",
-                    sub: "High performance UIs",
-                  },
-                  {
                     icon: <Layers size={18} />,
-                    title: "Architecture",
-                    sub: "Clean & testable",
+                    title: "MERN Stack",
+                    sub: "MongoDB, Express, React, Node",
                   },
                   {
                     icon: <Code2 size={18} />,
-                    title: "Node.js",
-                    sub: "Fast APIs",
+                    title: "Frontend Dev",
+                    sub: "React, Tailwind, Responsive UI",
                   },
                   {
-                    icon: <Sparkles size={18} />,
-                    title: "Design",
-                    sub: "Polished outcomes",
+                    icon: <Terminal size={18} />,
+                    title: "Backend APIs",
+                    sub: "REST APIs, Auth, Scalable logic",
+                  },
+                  {
+                    icon: <Terminal size={18} />,
+                    title: "React Native",
+                    sub: "Cross-platform mobile apps",
                   },
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/6"
+                    className="group flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/6 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300"
                   >
-                    <div className="text-[#00a2a2]">{item.icon}</div>
+                    <div className="text-[#00a2a2] group-hover:scale-110 transition-transform">
+                      {item.icon}
+                    </div>
+
                     <div>
-                      <div className="text-xs text-[#007787] font-semibold">
+                      <div className="text-xs text-[#007787] font-bold tracking-wide">
                         {item.title}
                       </div>
-                      <div className="text-[11px] text-gray-500">
+                      <div className="text-[11px] text-gray-500 group-hover:text-gray-300 transition">
                         {item.sub}
                       </div>
                     </div>
