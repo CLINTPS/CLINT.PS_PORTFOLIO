@@ -69,7 +69,7 @@ export default function Hero() {
                   <h3 className="text-xs md:text-sm uppercase tracking-wider text-gray-500 font-bold">
                     Hello, I'm
                   </h3>
-                  <h1 className="mt-1 text-3xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-br from-[#007787] to-[#9ff7f7] leading-tight">
+                  <h1 className="mt-1 text-3xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-br from-[#05a0b4] to-[#4dc8c8] leading-tight">
                     CLINT P S
                   </h1>
                   <p className="mt-2 text-sm text-gray-500 max-w-md mx-auto sm:mx-0 font-medium">
@@ -106,11 +106,13 @@ export default function Hero() {
 
                   <div className="mt-6 flex items-center justify-center sm:justify-start gap-4 text-[#9fbec0] font-semibold">
                     <a
-                      href="#contact"
-                      className="flex items-center text-gray-500 gap-2 text-sm  transition"
+                      href="https://www.linkedin.com/in/clint-p-s-a4674017a/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center text-gray-500 gap-2 text-sm hover:text-white transition"
                     >
-                      <Mail size={16} />{" "}
-                      <span className="hidden sm:inline">Contact</span>
+                      <BsLinkedin size={16} />{" "}
+                      <span className="hidden sm:inline">LinkedIn</span>
                     </a>
                     <a
                       href="https://github.com/CLINTPS"
@@ -122,13 +124,11 @@ export default function Hero() {
                       <span className="hidden sm:inline">GitHub</span>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/clint-p-s-a4674017a/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center text-gray-500 gap-2 text-sm hover:text-white transition"
+                      href="#contact"
+                      className="flex items-center text-gray-500 gap-2 text-sm  transition"
                     >
-                      <BsLinkedin size={16} />{" "}
-                      <span className="hidden sm:inline">LinkedIn</span>
+                      <Mail size={16} />{" "}
+                      <span className="hidden sm:inline">Contact</span>
                     </a>
                   </div>
                 </div>
