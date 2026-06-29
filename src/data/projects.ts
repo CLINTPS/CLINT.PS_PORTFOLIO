@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description:
       "A complete e-commerce platform for mobile sales with secure payment integration, admin dashboard, and user account management for seamless shopping experience.",
     github: "https://github.com/your-username/mobicart",
-    link: "https://your-mobicart-live-link.com",
+    link: "https://e-commerce-mobi-cart.onrender.com/#",
     tags: [
       "Node.js",
       "Express.js",
