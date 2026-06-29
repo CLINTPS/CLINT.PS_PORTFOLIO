@@ -177,22 +177,28 @@ export default function AllProjectsPage() {
                       <Code2 size={18} className="text-[#007787]" />
                     </div>
                     <div className="flex gap-2">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 text-gray-400 hover:text-[var(--text-main)] transition-colors"
-                      >
-                        <Github size={16} />
-                      </a>
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 text-[#007787] bg-[#007787]/10 rounded-lg hover:bg-[#007787] hover:text-white transition-all"
-                      >
-                        <ExternalLink size={16} />
-                      </a>
+                      {project.github && project.github.trim() !== "" && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 text-gray-400 hover:text-[var(--text-main)] transition-colors"
+                        >
+                          <Github size={16} />
+                        </a>
+                      )}
+                      
+                      {/* Only render Live link if it exists and is not empty */}
+                      {project.link && project.link.trim() !== "" && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 text-[#007787] bg-[#007787]/10 rounded-lg hover:bg-[#007787] hover:text-white transition-all"
+                        >
+                          <ExternalLink size={16} />
+                        </a>
+                      )}
                     </div>
                   </div>
 
