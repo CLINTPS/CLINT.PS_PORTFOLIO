@@ -300,7 +300,10 @@
 //   );
 // }
 
+
+
 "use client";
+
 import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import {
@@ -318,209 +321,657 @@ import {
   Sparkles,
 } from "lucide-react";
 import CVModal from "../modals/CvModal";
+
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const googleDriveLink =
     "https://drive.google.com/file/d/18FlpFtHlHPO_Ly76qOy3HF0St7m8L_ye/view?usp=drive_link";
+
   const container: Variants = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.08 } },
+    show: {
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
   };
+
   const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
   };
+
   const techStack = [
-    { name: "MongoDB", icon: <Database size={17} /> },
-    { name: "Express.js", icon: <Smartphone size={17} /> },
-    { name: "React.js", icon: <Code2 size={17} /> },
-    { name: "Node.js", icon: <Server size={17} /> },
+    {
+      name: "MongoDB",
+      icon: <Database size={17} />,
+    },
+    {
+      name: "Express.js",
+      icon: <Smartphone size={17} />,
+    },
+    {
+      name: "React.js",
+      icon: <Code2 size={17} />,
+    },
+    {
+      name: "Node.js",
+      icon: <Server size={17} />,
+    },
   ];
+
   return (
     <>
-      {" "}
       <section
         id="home"
-        className="relative min-h-screen w-full overflow-hidden bg-[#020617] text-white"
+        className="
+          relative
+          min-h-screen
+          w-full
+          overflow-hidden
+          bg-white
+          text-slate-900
+          transition-colors
+          duration-300
+          dark:bg-[#020617]
+          dark:text-white
+        "
       >
-        {" "}
-        {/* ================= BACKGROUND ================= */}{" "}
+        {/* =========================================================
+            BACKGROUND
+        ========================================================= */}
+
         <div className="pointer-events-none absolute inset-0">
-          {" "}
-          <div className="absolute -left-32 -top-32 h-[400px] w-[400px] rounded-full bg-[#007787]/20 blur-[120px]" />{" "}
-          <div className="absolute -right-32 top-1/4 h-[350px] w-[350px] rounded-full bg-[#f15a2b]/10 blur-[120px]" />{" "}
-          <div className="absolute bottom-0 left-1/3 h-[250px] w-[250px] rounded-full bg-[#007787]/10 blur-[100px]" />{" "}
+          {/* Top Left Glow */}
           <div
-            className="absolute inset-0 opacity-[0.025]"
+            className="
+              absolute
+              -left-32
+              -top-32
+              h-[400px]
+              w-[400px]
+              rounded-full
+              bg-[#007787]/10
+              blur-[120px]
+              dark:bg-[#007787]/20
+            "
+          />
+
+          {/* Top Right Glow */}
+          <div
+            className="
+              absolute
+              -right-32
+              top-1/4
+              h-[350px]
+              w-[350px]
+              rounded-full
+              bg-[#f15a2b]/5
+              blur-[120px]
+              dark:bg-[#f15a2b]/10
+            "
+          />
+
+          {/* Bottom Glow */}
+          <div
+            className="
+              absolute
+              bottom-0
+              left-1/3
+              h-[250px]
+              w-[250px]
+              rounded-full
+              bg-[#007787]/5
+              blur-[100px]
+              dark:bg-[#007787]/10
+            "
+          />
+
+          {/* Grid */}
+          <div
+            className="
+              absolute
+              inset-0
+              opacity-[0.035]
+              dark:opacity-[0.025]
+            "
             style={{
               backgroundImage:
-                "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+                "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
               backgroundSize: "45px 45px",
             }}
-          />{" "}
-        </div>{" "}
-        {/* ================= MAIN ================= */}{" "}
-        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-64px)] max-w-7xl items-center px-5 py-10 sm:px-8 lg:px-10 lg:py-8">
-          {" "}
+          />
+        </div>
+
+        {/* =========================================================
+            MAIN
+        ========================================================= */}
+
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            flex
+            min-h-[calc(100vh-64px)]
+            max-w-7xl
+            items-center
+            px-5
+            py-10
+            sm:px-8
+            lg:px-10
+            lg:py-8
+          "
+        >
           <motion.div
             variants={container}
             initial="hidden"
             animate="show"
-            className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12"
+            className="
+              grid
+              w-full
+              grid-cols-1
+              items-center
+              gap-10
+              lg:grid-cols-12
+              lg:gap-12
+            "
           >
-            <motion.div variants={fadeUp} className="lg:col-span-7">
-              {" "}
-              {/* Available */}{" "}
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#00a2a2]/20 bg-[#00a2a2]/5 px-3 py-1.5">
-                {" "}
+            {/* =====================================================
+                LEFT CONTENT
+            ===================================================== */}
+
+            <motion.div
+              variants={fadeUp}
+              className="lg:col-span-7"
+            >
+              {/* Available Badge */}
+
+              <div
+                className="
+                  mb-5
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  border
+                  border-[#00a2a2]/20
+                  bg-[#00a2a2]/5
+                  px-3
+                  py-1.5
+                "
+              >
                 <span className="relative flex h-2 w-2">
-                  {" "}
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00a2a2] opacity-70" />{" "}
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00a2a2]" />{" "}
-                </span>{" "}
-                <span className="text-[10px] font-semibold tracking-wider text-gray-400">
-                  {" "}
-                  OPEN TO NEW OPPORTUNITIES{" "}
-                </span>{" "}
-              </div>{" "}
-              {/* Greeting */}{" "}
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#007787]">
-                {" "}
-                Hello, I'm{" "}
-              </p>{" "}
-              {/* NAME */}{" "}
-              <h1 className="mt-2 whitespace-nowrap text-5xl font-black leading-none tracking-tight sm:text-6xl md:text-7xl lg:text-[72px]">
-                {" "}
+                  <span
+                    className="
+                      absolute
+                      inline-flex
+                      h-full
+                      w-full
+                      animate-ping
+                      rounded-full
+                      bg-[#00a2a2]
+                      opacity-70
+                    "
+                  />
+
+                  <span
+                    className="
+                      relative
+                      inline-flex
+                      h-2
+                      w-2
+                      rounded-full
+                      bg-[#00a2a2]
+                    "
+                  />
+                </span>
+
+                <span
+                  className="
+                    text-[10px]
+                    font-semibold
+                    tracking-wider
+                    text-slate-500
+                    dark:text-gray-400
+                  "
+                >
+                  OPEN TO NEW OPPORTUNITIES
+                </span>
+              </div>
+
+              {/* Greeting */}
+
+              <p
+                className="
+                  text-xs
+                  font-semibold
+                  uppercase
+                  tracking-[0.25em]
+                  text-[#007787]
+                "
+              >
+                Hello, I'm
+              </p>
+
+              {/* NAME */}
+
+              <h1
+                className="
+                  mt-2
+                  whitespace-nowrap
+                  text-5xl
+                  font-black
+                  leading-none
+                  tracking-tight
+                  text-slate-900
+                  sm:text-6xl
+                  md:text-7xl
+                  lg:text-[72px]
+                  dark:text-white
+                "
+              >
                 CLINT{" "}
-                <span className="bg-gradient-to-r from-[#00a2a2] via-[#00a2a2] to-[#00a2a2] bg-clip-text text-transparent">
-                  {" "}
-                  PS{" "}
-                </span>{" "}
-              </h1>{" "}
-              {/* ROLE */}{" "}
+                <span
+                  className="
+                    bg-gradient-to-r
+                    from-[#00a2a2]
+                    via-[#00a2a2]
+                    to-[#00a2a2]
+                    bg-clip-text
+                    text-transparent
+                  "
+                >
+                  PS
+                </span>
+              </h1>
+
+              {/* ROLE */}
+
               <div className="mt-5 flex flex-wrap items-center gap-2.5">
-                {" "}
-                <span className="text-lg font-semibold text-gray-200 sm:text-xl">
-                  {" "}
-                  Full Stack Developer{" "}
-                </span>{" "}
-                <span className="h-1.5 w-1.5 rounded-full bg-[#f15a2b]" />{" "}
-                <span className="text-lg font-medium text-gray-500 sm:text-xl">
-                  {" "}
-                  MERN Stack{" "}
-                </span>{" "}
-              </div>{" "}
-              {/* DESCRIPTION */}{" "}
-              <p className="mt-4 max-w-xl text-sm leading-6 text-gray-400 sm:text-base sm:leading-7">
-                {" "}
+                <span
+                  className="
+                    text-lg
+                    font-semibold
+                    text-slate-800
+                    sm:text-xl
+                    dark:text-gray-200
+                  "
+                >
+                  Full Stack Developer
+                </span>
+
+                <span className="h-1.5 w-1.5 rounded-full bg-[#f15a2b]" />
+
+                <span
+                  className="
+                    text-lg
+                    font-medium
+                    text-slate-500
+                    sm:text-xl
+                    dark:text-gray-500
+                  "
+                >
+                  MERN Stack Developer
+                </span>
+              </div>
+
+              {/* DESCRIPTION */}
+
+              <p
+                className="
+                  mt-4
+                  max-w-xl
+                  text-sm
+                  leading-6
+                  text-slate-600
+                  sm:text-base
+                  sm:leading-7
+                  dark:text-gray-400
+                "
+              >
                 I build scalable web and mobile applications using modern
                 technologies, clean architecture, and performance-focused
-                development.{" "}
-              </p>{" "}
-              {/* LOCATION */}{" "}
-              <div className="mt-3 flex items-center gap-2 text-xs text-gray-500">
-                {" "}
-                <MapPin size={14} className="text-[#007787]" /> Kozhikode,
-                Kerala, India{" "}
-              </div>{" "}
-              {/* ================= BUTTONS ================= */}{" "}
+                development.
+              </p>
+
+              {/* LOCATION */}
+
+              <div
+                className="
+                  mt-3
+                  flex
+                  items-center
+                  gap-2
+                  text-xs
+                  text-slate-500
+                  dark:text-gray-500
+                "
+              >
+                <MapPin
+                  size={14}
+                  className="text-[#007787]"
+                />
+
+                Kozhikode, Kerala, India
+              </div>
+
+              {/* =====================================================
+                  BUTTONS
+              ===================================================== */}
+
               <div className="mt-6 flex flex-wrap gap-2.5">
-                {" "}
+                {/* View Projects */}
+
                 <a
                   href="#projects"
-                  className="group inline-flex items-center gap-2 rounded-lg bg-[#00a2a2] px-4 py-2.5 text-xs font-bold text-[#001b1c] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#18baba]"
+                  className="
+                    group
+                    inline-flex
+                    items-center
+                    gap-2
+                    rounded-lg
+                    bg-[#00a2a2]
+                    px-4
+                    py-2.5
+                    text-xs
+                    font-bold
+                    text-[#001b1c]
+                    transition-all
+                    duration-300
+                    hover:-translate-y-0.5
+                    hover:bg-[#18baba]
+                  "
                 >
-                  {" "}
-                  View Projects{" "}
+                  View Projects
+
                   <ArrowUpRight
                     size={15}
-                    className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  />{" "}
-                </a>{" "}
+                    className="
+                      transition-transform
+                      group-hover:-translate-y-0.5
+                      group-hover:translate-x-0.5
+                    "
+                  />
+                </a>
+
+                {/* Preview CV */}
+
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2.5 text-xs font-semibold text-gray-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00a2a2]/40 hover:bg-white/[0.06]"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    rounded-lg
+                    border
+                    border-slate-300
+                    bg-slate-50
+                    px-4
+                    py-2.5
+                    text-xs
+                    font-semibold
+                    text-slate-700
+                    transition-all
+                    duration-300
+                    hover:-translate-y-0.5
+                    hover:border-[#00a2a2]/40
+                    hover:bg-[#00a2a2]/5
+
+                    dark:border-white/10
+                    dark:bg-white/[0.03]
+                    dark:text-gray-300
+                    dark:hover:bg-white/[0.06]
+                  "
                 >
-                  {" "}
-                  <Eye size={15} /> Preview CV{" "}
-                </button>{" "}
+                  <Eye size={15} />
+
+                  Preview CV
+                </button>
+
+                {/* Download CV */}
+
                 <a
                   href={googleDriveLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2.5 text-xs font-semibold text-gray-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#f15a2b]/40 hover:bg-white/[0.06]"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    rounded-lg
+                    border
+                    border-slate-300
+                    bg-slate-50
+                    px-4
+                    py-2.5
+                    text-xs
+                    font-semibold
+                    text-slate-700
+                    transition-all
+                    duration-300
+                    hover:-translate-y-0.5
+                    hover:border-[#f15a2b]/40
+                    hover:bg-[#f15a2b]/5
+
+                    dark:border-white/10
+                    dark:bg-white/[0.03]
+                    dark:text-gray-300
+                    dark:hover:bg-white/[0.06]
+                  "
                 >
-                  {" "}
-                  <Download size={15} /> Download CV{" "}
-                </a>{" "}
-              </div>{" "}
-              {/* ================= SOCIALS ================= */}{" "}
+                  <Download size={15} />
+
+                  Download CV
+                </a>
+              </div>
+
+              {/* =====================================================
+                  SOCIALS
+              ===================================================== */}
+
               <div className="mt-5 flex items-center gap-5">
-                {" "}
+                {/* GitHub */}
+
                 <a
                   href="https://github.com/CLINTPS"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-xs text-gray-500 transition hover:text-white"
+                  className="
+                    flex
+                    items-center
+                    gap-2
+                    text-xs
+                    text-slate-500
+                    transition
+                    hover:text-slate-900
+                    dark:text-gray-500
+                    dark:hover:text-white
+                  "
                 >
-                  {" "}
-                  <Github size={17} /> GitHub{" "}
-                </a>{" "}
-                <span className="h-4 w-px bg-white/10" />{" "}
+                  <Github size={17} />
+
+                  GitHub
+                </a>
+
+                <span
+                  className="
+                    h-4
+                    w-px
+                    bg-slate-200
+                    dark:bg-white/10
+                  "
+                />
+
+                {/* LinkedIn */}
+
                 <a
                   href="https://www.linkedin.com/in/clint-p-s-a4674017a/"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-xs text-gray-500 transition hover:text-white"
+                  className="
+                    flex
+                    items-center
+                    gap-2
+                    text-xs
+                    text-slate-500
+                    transition
+                    hover:text-[#0077b5]
+                    dark:text-gray-500
+                    dark:hover:text-white
+                  "
                 >
-                  {" "}
-                  <Linkedin size={17} /> LinkedIn{" "}
-                </a>{" "}
-                <span className="h-4 w-px bg-white/10" />{" "}
+                  <Linkedin size={17} />
+
+                  LinkedIn
+                </a>
+
+                <span
+                  className="
+                    h-4
+                    w-px
+                    bg-slate-200
+                    dark:bg-white/10
+                  "
+                />
+
+                {/* Contact */}
+
                 <a
                   href="#contact"
-                  className="flex items-center gap-2 text-xs text-gray-500 transition hover:text-white"
+                  className="
+                    flex
+                    items-center
+                    gap-2
+                    text-xs
+                    text-slate-500
+                    transition
+                    hover:text-[#007787]
+                    dark:text-gray-500
+                    dark:hover:text-white
+                  "
                 >
-                  {" "}
-                  <Mail size={17} /> Contact{" "}
-                </a>{" "}
-              </div>{" "}
-              {/* ================= TECH STACK ================= */}{" "}
-              <div className="mt-7 grid max-w-xl grid-cols-2 gap-2.5 sm:grid-cols-4">
-                {" "}
+                  <Mail size={17} />
+
+                  Contact
+                </a>
+              </div>
+
+              {/* =====================================================
+                  TECH STACK
+              ===================================================== */}
+
+              <div
+                className="
+                  mt-7
+                  grid
+                  max-w-xl
+                  grid-cols-2
+                  gap-2.5
+                  sm:grid-cols-4
+                "
+              >
                 {techStack.map((tech) => (
                   <motion.div
                     key={tech.name}
-                    whileHover={{ y: -3 }}
-                    className="flex items-center gap-2 rounded-lg border border-white/[0.07] bg-white/[0.025] px-3 py-2.5 transition hover:border-[#00a2a2]/20 hover:bg-white/[0.05]"
+                    whileHover={{
+                      y: -3,
+                    }}
+                    className="
+                      flex
+                      items-center
+                      gap-2
+                      rounded-lg
+                      border
+                      border-slate-200
+                      bg-slate-50
+                      px-3
+                      py-2.5
+                      transition
+
+                      hover:border-[#00a2a2]/30
+                      hover:bg-[#00a2a2]/5
+
+                      dark:border-white/[0.07]
+                      dark:bg-white/[0.025]
+                      dark:hover:bg-white/[0.05]
+                    "
                   >
-                    {" "}
-                    <span className="text-[#007787]"> {tech.icon} </span>{" "}
-                    <span className="text-[10px] font-semibold text-gray-400 sm:text-xs">
-                      {" "}
-                      {tech.name}{" "}
-                    </span>{" "}
+                    <span className="text-[#007787]">
+                      {tech.icon}
+                    </span>
+
+                    <span
+                      className="
+                        text-[10px]
+                        font-semibold
+                        text-slate-600
+                        sm:text-xs
+                        dark:text-gray-400
+                      "
+                    >
+                      {tech.name}
+                    </span>
                   </motion.div>
-                ))}{" "}
-              </div>{" "}
-            </motion.div>{" "}
-            {/* ================================================= */}{" "}
-            {/* RIGHT PROFILE */}{" "}
-            {/* ================================================= */}{" "}
+                ))}
+              </div>
+            </motion.div>
+
+            {/* =====================================================
+                RIGHT PROFILE
+            ===================================================== */}
+
             <motion.div
               variants={fadeUp}
-              className="relative flex items-center justify-center lg:col-span-5"
+              className="
+                relative
+                flex
+                items-center
+                justify-center
+                lg:col-span-5
+              "
             >
-              {" "}
-              {/* Rotating circle */}{" "}
+              {/* Rotating Circle */}
+
               <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="absolute h-[300px] w-[300px] rounded-full border border-dashed border-[#007787]/20 sm:h-[350px] sm:w-[350px]"
-              />{" "}
-              {/* Profile */}{" "}
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="
+                  absolute
+                  h-[300px]
+                  w-[300px]
+                  rounded-full
+                  border
+                  border-dashed
+                  border-[#007787]/20
+                  sm:h-[350px]
+                  sm:w-[350px]
+                "
+              />
+
+              {/* Profile */}
+
               <motion.div
-                animate={{ y: [0, -7, 0] }}
+                animate={{
+                  y: [0, -7, 0],
+                }}
                 transition={{
                   duration: 5,
                   repeat: Infinity,
@@ -528,124 +979,332 @@ export default function Hero() {
                 }}
                 className="relative z-10"
               >
-                {" "}
-                {/* Glow */}{" "}
-                <div className="absolute inset-5 rounded-full bg-[#007787]/20 blur-[60px]" />{" "}
-                {/* Image */}{" "}
-                <div className="relative h-[270px] w-[270px] overflow-hidden rounded-full border border-white/10 bg-[#071017] p-2 shadow-2xl sm:h-[320px] sm:w-[320px]">
-                  {" "}
-                  <div className="h-full w-full overflow-hidden rounded-full bg-[#020617]">
-                    {" "}
+                {/* Glow */}
+
+                <div
+                  className="
+                    absolute
+                    inset-5
+                    rounded-full
+                    bg-[#007787]/10
+                    blur-[60px]
+                    dark:bg-[#007787]/20
+                  "
+                />
+
+                {/* Image Container */}
+
+                <div
+                  className="
+                    relative
+                    h-[270px]
+                    w-[270px]
+                    overflow-hidden
+                    rounded-full
+                    border
+                    border-slate-200
+                    bg-white
+                    p-2
+                    shadow-2xl
+                    sm:h-[320px]
+                    sm:w-[320px]
+
+                    dark:border-white/10
+                    dark:bg-[#071017]
+                  "
+                >
+                  <div
+                    className="
+                      h-full
+                      w-full
+                      overflow-hidden
+                      rounded-full
+                      bg-slate-100
+                      dark:bg-[#020617]
+                    "
+                  >
                     <img
                       src="/Profile/CLINT PS DP.png"
                       alt="CLINT PS"
                       className="h-full w-full object-cover"
-                    />{" "}
-                  </div>{" "}
-                  {/* Image overlay */}{" "}
-                  <div className="pointer-events-none absolute inset-2 rounded-full bg-gradient-to-t from-[#020617]/40 to-transparent" />{" "}
-                </div>{" "}
-                {/* ================= FLOATING CARD 1 ================= */}{" "}
+                    />
+                  </div>
+
+                  {/* Image Overlay */}
+
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      inset-2
+                      rounded-full
+                      bg-gradient-to-t
+                      from-slate-900/20
+                      to-transparent
+                      dark:from-[#020617]/40
+                    "
+                  />
+                </div>
+
+                {/* =================================================
+                    FLOATING CARD 1
+                ================================================= */}
+
                 <motion.div
-                  animate={{ y: [0, 7, 0] }}
+                  animate={{
+                    y: [0, 7, 0],
+                  }}
                   transition={{
                     duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="absolute -left-8 top-10 hidden rounded-xl border border-white/10 bg-[#071017]/90 px-3 py-2.5 shadow-xl backdrop-blur-xl sm:block"
+                  className="
+                    absolute
+                    -left-8
+                    top-10
+                    hidden
+                    rounded-xl
+                    border
+                    border-slate-200
+                    bg-white/95
+                    px-3
+                    py-2.5
+                    shadow-xl
+                    backdrop-blur-xl
+                    sm:block
+
+                    dark:border-white/10
+                    dark:bg-[#071017]/90
+                  "
                 >
-                  {" "}
                   <div className="flex items-center gap-2.5">
-                    {" "}
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#00a2a2]/10 text-[#00a2a2]">
-                      {" "}
-                      <Code2 size={16} />{" "}
-                    </div>{" "}
+                    <div
+                      className="
+                        flex
+                        h-8
+                        w-8
+                        items-center
+                        justify-center
+                        rounded-lg
+                        bg-[#00a2a2]/10
+                        text-[#00a2a2]
+                      "
+                    >
+                      <Code2 size={16} />
+                    </div>
+
                     <div>
-                      {" "}
-                      <p className="text-[9px] uppercase tracking-wider text-gray-600">
-                        {" "}
-                        Stack{" "}
-                      </p>{" "}
-                      <p className="text-xs font-bold text-gray-300">
-                        {" "}
-                        MERN{" "}
-                      </p>{" "}
-                    </div>{" "}
-                  </div>{" "}
-                </motion.div>{" "}
-                {/* ================= FLOATING CARD 2 ================= */}{" "}
+                      <p
+                        className="
+                          text-[9px]
+                          uppercase
+                          tracking-wider
+                          text-slate-400
+                          dark:text-gray-600
+                        "
+                      >
+                        Stack
+                      </p>
+
+                      <p
+                        className="
+                          text-xs
+                          font-bold
+                          text-slate-800
+                          dark:text-gray-300
+                        "
+                      >
+                        MERN
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* =================================================
+                    FLOATING CARD 2
+                ================================================= */}
+
                 <motion.div
-                  animate={{ y: [0, -7, 0] }}
+                  animate={{
+                    y: [0, -7, 0],
+                  }}
                   transition={{
                     duration: 4.5,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="absolute -right-8 bottom-12 hidden rounded-xl border border-white/10 bg-[#071017]/90 px-3 py-2.5 shadow-xl backdrop-blur-xl sm:block"
+                  className="
+                    absolute
+                    -right-8
+                    bottom-12
+                    hidden
+                    rounded-xl
+                    border
+                    border-slate-200
+                    bg-white/95
+                    px-3
+                    py-2.5
+                    shadow-xl
+                    backdrop-blur-xl
+                    sm:block
+
+                    dark:border-white/10
+                    dark:bg-[#071017]/90
+                  "
                 >
-                  {" "}
                   <div className="flex items-center gap-2.5">
-                    {" "}
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f15a2b]/10 text-[#f15a2b]">
-                      {" "}
-                      <Sparkles size={16} />{" "}
-                    </div>{" "}
+                    <div
+                      className="
+                        flex
+                        h-8
+                        w-8
+                        items-center
+                        justify-center
+                        rounded-lg
+                        bg-[#f15a2b]/10
+                        text-[#f15a2b]
+                      "
+                    >
+                      <Sparkles size={16} />
+                    </div>
+
                     <div>
-                      {" "}
-                      <p className="text-[9px] uppercase tracking-wider text-gray-600">
-                        {" "}
-                        Experience{" "}
-                      </p>{" "}
-                      <p className="text-xs font-bold text-gray-300">
-                        {" "}
-                        2+ Years{" "}
-                      </p>{" "}
-                    </div>{" "}
-                  </div>{" "}
-                </motion.div>{" "}
-                {/* ================= AVAILABLE BADGE ================= */}{" "}
-                <div className="absolute bottom-[-15px] left-1/2 -translate-x-1/2 rounded-full border border-[#00a2a2]/20 bg-[#071017]/90 px-4 py-2 shadow-xl backdrop-blur-xl">
-                  {" "}
+                      <p
+                        className="
+                          text-[9px]
+                          uppercase
+                          tracking-wider
+                          text-slate-400
+                          dark:text-gray-600
+                        "
+                      >
+                        Experience
+                      </p>
+
+                      <p
+                        className="
+                          text-xs
+                          font-bold
+                          text-slate-800
+                          dark:text-gray-300
+                        "
+                      >
+                        2+ Years
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* =================================================
+                    AVAILABLE BADGE
+                ================================================= */}
+
+                <div
+                  className="
+                    absolute
+                    bottom-[-15px]
+                    left-1/2
+                    -translate-x-1/2
+                    rounded-full
+                    border
+                    border-[#00a2a2]/20
+                    bg-white/95
+                    px-4
+                    py-2
+                    shadow-xl
+                    backdrop-blur-xl
+
+                    dark:bg-[#071017]/90
+                  "
+                >
                   <div className="flex items-center gap-2 whitespace-nowrap">
-                    {" "}
-                    <span className="h-2 w-2 rounded-full bg-[#00a2a2]" />{" "}
-                    <span className="text-[10px] font-semibold text-gray-400">
-                      {" "}
-                      Building with modern technologies{" "}
-                    </span>{" "}
-                  </div>{" "}
-                </div>{" "}
-              </motion.div>{" "}
-            </motion.div>{" "}
-          </motion.div>{" "}
-        </div>{" "}
-        {/* ================= SCROLL ================= */}{" "}
+                    <span className="h-2 w-2 rounded-full bg-[#00a2a2]" />
+
+                    <span
+                      className="
+                        text-[10px]
+                        font-semibold
+                        text-slate-500
+                        dark:text-gray-400
+                      "
+                    >
+                      Building with modern technologies
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* =========================================================
+            SCROLL
+        ========================================================= */}
+
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-3 left-1/2 hidden -translate-x-1/2 flex-col items-center md:flex"
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            delay: 1.2,
+          }}
+          className="
+            absolute
+            bottom-3
+            left-1/2
+            hidden
+            -translate-x-1/2
+            flex-col
+            items-center
+            md:flex
+          "
         >
-          {" "}
-          <span className="mb-1 text-[8px] uppercase tracking-[0.3em] text-gray-600">
-            {" "}
-            Scroll{" "}
-          </span>{" "}
+          <span
+            className="
+              mb-1
+              text-[8px]
+              uppercase
+              tracking-[0.3em]
+              text-slate-400
+              dark:text-gray-600
+            "
+          >
+            Scroll
+          </span>
+
           <motion.div
-            animate={{ height: [15, 25, 15], opacity: [0.3, 1, 0.3] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-px bg-gradient-to-b from-[#00a2a2] to-transparent"
-          />{" "}
-        </motion.div>{" "}
-      </section>{" "}
-      {/* ================= CV MODAL ================= */}{" "}
+            animate={{
+              height: [15, 25, 15],
+              opacity: [0.3, 1, 0.3],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="
+              w-px
+              bg-gradient-to-b
+              from-[#00a2a2]
+              to-transparent
+            "
+          />
+        </motion.div>
+      </section>
+
+      {/* =========================================================
+          CV MODAL
+      ========================================================= */}
+
       <CVModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         cvUrl={googleDriveLink}
-      />{" "}
+      />
     </>
   );
 }

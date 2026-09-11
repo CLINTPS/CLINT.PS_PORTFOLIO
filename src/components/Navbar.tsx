@@ -258,12 +258,12 @@ export default function Navbar() {
       >
         <div className="relative">
           <div className="bg-[var(--nav-bg)]/80 backdrop-blur-xl border border-[var(--nav-border)] rounded-2xl p-2 shadow-2xl flex flex-col items-center gap-3">
-            <a
+            {/* <a
               href="#"
               className="w-10 h-10 rounded-full bg-gradient-to-br from-[#007787] to-[#f15a2b] flex items-center justify-center text-white font-black text-lg shadow-md hover:scale-110 transition-transform"
             >
               C
-            </a>
+            </a> */}
 
             <div className="flex flex-col items-center gap-2">
               {navLinks.map((link) => (
