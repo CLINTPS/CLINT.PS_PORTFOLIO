@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     company: "Inexoft Technologies Pvt. Ltd",
     role: "Full Stack Developer",
-    period: "Mar 2025 — Present",
+    period: "Mar 2025 — Mar 2026",
     description:
       "Working as a Full Stack Developer building scalable web applications using MERN stack and modern frontend technologies. Contributing to real-time platforms and enterprise-level solutions with a focus on performance, clean architecture, and user experience.",
 
